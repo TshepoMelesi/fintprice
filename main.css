@@ -73,11 +73,18 @@ body{
 .App .product-metrics .expenses-container .header .add-expense{
         color: var(--primary);
 }
+
 .App .product-metrics .expenses-container .header .clear-expense-list{
         color: red;
 }
 
+.App .product-metrics .expenses-container .expense-list{
+        overflow-y: auto;
+        max-height: 7rem;
+}
+
 .App .product-metrics .expenses-container .expense{
+        margin-block: 0.2em;
         display: grid;
         grid-template-columns: 70% auto;
         width: 100%;

@@ -9,7 +9,6 @@ class FintPrice{
                         price : 0,
                         margin : 0.5,
                         expenses : [
-                                {name : "Expense", comment : "expense holder", amount : 0},
                                 {name : "Expense", comment : "expense holder", amount : 0}
                         ],
                         VATprice : 0
