@@ -57,6 +57,13 @@ const handleAddExpense = () => {
         expenseList.appendChild(expense)
 }
 
+const handleClearExpenses = () => {
+        FintPrice.clearExpenses()
+        expenseList.innerHTML = ""
+
+        handleAddExpense()
+}
+
 
 const handleCalculate = () => {
         // write to FintPrice class
