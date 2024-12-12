@@ -17,7 +17,23 @@ body{
         height: 100dvh;
 
         display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+header{
+        height: 3em;
+        width: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
         justify-content: center;
+        margin-bottom: 3em;
+}
+header .container{
+        width : 1000px;
+        
+        display: flex;
         align-items: center;
 }
 
