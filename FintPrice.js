@@ -8,9 +8,7 @@ class FintPrice{
                         description : "product holder",
                         price : 0,
                         margin : 0.5,
-                        expenses : [
-                                {name : "Expense", comment : "expense holder", amount : 0}
-                        ],
+                        expenses : [],
                         VATprice : 0
                 }
         }
@@ -41,9 +39,16 @@ class FintPrice{
 
                 return this.product.price
         }
+        static setVatPrice(price){
+                this.product.VATprice = price
+        }
+        static getVatPrice(){
+                return this.product.VATprice
+        }
         static calculatePrice(){
                 let expenses = 0
                 let price = 0
+                let vatPrice = 0
 
                 // accumulate expense costs
                 for(let i = 0; i < this.getExpenses().length; i++){
@@ -52,17 +57,20 @@ class FintPrice{
 
                 // calculate the price
                 price = expenses * (1 + this.getMargin())
+                // calculate the vat price
+                vatPrice = price * this.VAT
 
                 this.setPrice(price)
+                this.setVatPrice(vatPrice)
 
-                return this.product
+                return this.product.price
         }
 
         // methods for margin property
         static setMargin(margin){
                 if(!margin) return 
 
-                this.product.margin = margin
+                this.product.margin = margin / 100
 
                 return this.product
         }
@@ -81,8 +89,18 @@ class FintPrice{
 
                 return this.product
         }
+        static getTotalExpenses(){
+                const total = this.product.expenses.reduce((acc, curr) => acc + curr.amount ,  0)
+
+                console.log(total)
+                return total
+        }
         static getExpenses(){
                 return this.product.expenses
+        }
+        static clearExpenses(){
+                this.product.expenses = []
+                return this.product
         }
         static print(){
                 console.log(this.product)

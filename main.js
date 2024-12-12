@@ -1,17 +1,30 @@
 const expenseList = document.querySelector(".expense-list")
+const marginEl = document.querySelector(".margin")
+const marginSpan = document.getElementById("margin")
+const priceEl = document.querySelector(".price")
+const vatPriceEl = document.querySelector(".vat-price")
 
 // initialize or setup a dummy product first
 FintPrice.setProduct()
 
-const displayExpense = ({name, comment, amount}, idx) => {
-        const expense = `
-                <div class="expense">
-                        <input type="text" oninput="handleEditExpense(this)" name="expense" class="expense-name ${idx}" placeholder="Expense"/>
-                        <input type="number" oninput="handleEditExpense(this)" name="amount" class="expense-amount ${idx}" placeholder="Amount"/>
-                </div>
-        `
+const round = (amount, decimals = 100) => {
+        return Math.round(amount * decimals) / decimals
+}
 
-        expenseList.innerHTML += expense
+const writeExpenses = () => {
+        const eNames = document.querySelectorAll(".expense-name")
+        const eAmounts = document.querySelectorAll(".expense-amount")
+
+        FintPrice.clearExpenses()
+
+        for(let i = 0; i < eNames.length; i ++){
+                FintPrice.setExpense(
+                        {
+                                name : eNames[i].value, 
+                                amount : Number(eAmounts[i].value), 
+                                comment : "no comment"
+                        })
+        }
 }
 
 const createExpense = () => {
@@ -46,8 +59,16 @@ const handleAddExpense = () => {
 
 
 const handleCalculate = () => {
-        // get data from inputs
-        // pass data to the FintPrice class
-        // display return product data
+        // write to FintPrice class
+        writeExpenses()
+        
+        // refresh UI
+        priceEl.innerText = "R " + FintPrice.calculatePrice()
+        vatPriceEl.innerText = "R " + round(FintPrice.getVatPrice())
+}
+
+const handleMarginChange = (e) => {
+        FintPrice.setMargin(e.value)
+        marginSpan.innerText = round(FintPrice.getMargin() * 100)
 }
 

@@ -13,8 +13,8 @@
                                 <div class="product-metrics">
 
                                         <div class="margin-container">
-                                                <h3>Profit Margin (<span>50</span>%)</h3>
-                                                <input class="margin" type="range" />
+                                                <h3>Profit Margin (<span id="margin">50</span>%)</h3>
+                                                <input class="margin" oninput="handleMarginChange(this)" type="range" />
                                         </div>
 
                                         <div class="expenses-container">
@@ -37,7 +37,7 @@
                                         </div>
 
                                         <div class="footer">
-                                                <button class="calculate-btn">Calculate Price</button>
+                                                <button class="calculate-btn" onclick="handleCalculate()">Calculate Price</button>
                                         </div>
                                 </div>
                                 <div class="product-result">
@@ -52,7 +52,7 @@
                                         <hr />
 
                                         <div class="vat-container">
-                                                <h3>vat inclusive</h3>
+                                                <h3>vat inclusive (<span class="vat">15%</span>)</h3>
                                                 <h3 class="vat-price">R 500</h3>
                                         </div>
 

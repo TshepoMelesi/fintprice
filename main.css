@@ -184,7 +184,8 @@ hr{
         display: flex;
         justify-content: space-between;
 }
-.product-result .vat-container h3{
+.product-result .vat-container h3,
+.product-result .vat-container h3 span{
         font-size: 0.8rem;
         font-weight: normal;
 }
