@@ -8,8 +8,11 @@
 }
 
 :root{
-        --primary: rgb(31, 150, 197);
-        --secondary: skyblue;
+        --primary: royalblue;
+        --secondary: rgb(254, 20, 20);
+
+        --black : rgb(20, 20, 20);
+        --white : white;
 }
 
 body{
@@ -24,7 +27,7 @@ body{
 header{
         height: 3em;
         width: 100%;
-        background-color: black;
+        background-color: var(--black);
         color: white;
         display: flex;
         justify-content: center;
@@ -38,13 +41,13 @@ header .container{
 }
 
 .App{
-        /* border: 1px solid white; */
         width: 800px;
         display: flex;
         flex-direction: column;
 }
 
 .App .title h1{
+        color: var(--black);
         font-size: 1.3rem;
         margin-bottom: 2rem;
 }
@@ -91,7 +94,7 @@ header .container{
 }
 
 .App .product-metrics .expenses-container .header .clear-expense-list{
-        color: red;
+        color: var(--secondary);
 }
 
 .App .product-metrics .expenses-container .expense-list{
@@ -109,7 +112,7 @@ header .container{
 .App .product-metrics .expenses-container .expense input{
         background-color: inherit;
         padding-left: 0.5rem;
-        border: 1px solid black;
+        border: 1px solid var(--black);
         outline: none;
         width: 100%;
 }
@@ -128,7 +131,7 @@ header .container{
 .App .product-metrics .footer .calculate-btn{
         width: 90%;
         padding: 0.3rem;
-        background-color: black;
+        background-color: var(--black);
         color: white;
         border: none;
         outline: none;
@@ -138,38 +141,6 @@ header .container{
 .App .product-metrics .footer .calculate-btn:hover{
         opacity: 0.9;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .App .product .product-result{
         display: flex;
@@ -183,14 +154,14 @@ header .container{
 .product-result .title{
         font-size: 1.3em;
         font-weight: normal;
+        color: var(--black);
 }
 .product-result .price{
-        color: rgb(31, 150, 197);
+        color: var(--primary);
         font-size: 3em;
 }
 
 hr{
-        background-color: red;
         height: 1px;
         width: 100%;
 }
@@ -204,6 +175,7 @@ hr{
 .product-result .vat-container h3 span{
         font-size: 0.8rem;
         font-weight: normal;
+        color: var(--black);
 }
 
 .product-result .vat-container  .vat-price{
@@ -219,7 +191,7 @@ hr{
 .product-result .footer-container .printout-btn{
         padding-block: 0.3rem;
         background-color: inherit;
-        border: 2px solid black;
+        border: 2px solid var(--black);
         outline: none;
         width: 100%;
 }
