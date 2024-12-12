@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link rel="stylesheet" href="main.css" />
+                <title>FintSuite - Pricing App</title>
+        </head>
+        <body>
+                <main class="App">
+                        <div class="title">
+                                <h1>Easiest way to calculate consistent prices</h1>
+                        </div>
+                        <div class="product">
+                                <div class="product-metrics">
+
+                                        <div class="margin-container">
+                                                <h3>Profit Margin (<span>50</span>%)</h3>
+                                                <input class="margin" type="range" />
+                                        </div>
+
+                                        <div class="expenses-container">
+                                                <div class="header">
+                                                        <h3>Expenses</h3>
+
+                                                        <div class="expenses-btns">
+                                                                <button class="add-expense">Add Expense</button>
+                                                                <button class="clear-expense-list">Clear</button>
+                                                        </div>
+                                                </div>
+
+                                                <div class="expense-list">
+                                                        <div class="expense">
+                                                                <input type="text" class="expense-name" placeholder="Expense"/>
+                                                                <input type="number" class="expense-amount" placeholder="Amount"/>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                        <div class="footer">
+                                                <button class="calculate-btn">Calculate Price</button>
+                                        </div>
+                                </div>
+                                <div class="product-result">
+                                        <div class="title-container">
+                                                <h2 class="title">Your product price</h2>
+                                        </div>
+
+                                        <div class="body-container">
+                                                <h2 class="price">R 500</h2>
+                                        </div>
+
+                                        <hr />
+
+                                        <div class="vat-container">
+                                                <h3>vat inclusive</h3>
+                                                <h3 class="vat-price">R 500</h3>
+                                        </div>
+
+                                        <div class="footer-container">
+                                                <button class="printout-btn">printout</button>
+                                        </div>
+                                </div>
+                        </div>
+                </main>
+                <script src="FintPrice.js"></script>
+                <script src="main.js"></script>
+        </body>
+</html>
