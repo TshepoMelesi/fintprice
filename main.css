@@ -4,7 +4,6 @@
         box-sizing: border-box;
 
         font-family : Poppins;
-        font-size: 18px;
 }
 
 :root{
@@ -12,7 +11,7 @@
         --secondary: rgb(254, 20, 20);
 
         --black : rgb(20, 20, 20);
-        --white : white;
+        --white : rgb(241, 234, 234);
 }
 
 body{
@@ -25,7 +24,6 @@ body{
 }
 
 header{
-        height: 3em;
         width: 100%;
         background-color: var(--black);
         color: white;
@@ -33,30 +31,36 @@ header{
         justify-content: center;
         margin-bottom: 3em;
 }
+
 header .container{
-        width : 1000px;
+        width : 90%;
         
         display: flex;
         align-items: center;
 }
 
+header .container .logo{
+        font-size: 1.4rem;
+}
+
 .App{
-        width: 800px;
+        width: 90%;
+        max-width: 1000px;
+        height: 100%;
         display: flex;
         flex-direction: column;
 }
 
 .App .title h1{
         color: var(--black);
-        font-size: 1.3rem;
+        font-size: 1em;
         margin-bottom: 2rem;
 }
 
 .App .product{
         width: 100%;
-
+        gap: 2rem;
         display: grid;
-        grid-template-columns: 60% auto;
 }
 
 .App .product-metrics{
@@ -69,11 +73,20 @@ header .container{
         display: flex;
         gap: 0.5rem;
         flex-direction: column;
-        width: 90%;
+        width: 100%;
+}
+
+h3{
+        font-size: 1em;
+}
+
+h3 span{
+        font-size: 1em;
 }
 
 .App .product-metrics .expenses-container{
-        width: 90%;
+        width: 100%;
+        margin-block: 2em;
 }
 
 .App .product-metrics .expenses-container .header{
@@ -85,7 +98,7 @@ header .container{
 .App .product-metrics .expenses-container .header button{
         border: none;
         background-color: inherit;
-        font-size: 0.8rem;
+        font-size: 1em;
         font-weight: bold;
 }
 
@@ -99,7 +112,9 @@ header .container{
 
 .App .product-metrics .expenses-container .expense-list{
         overflow-y: auto;
-        max-height: 7rem;
+        scroll-behavior: smooth;
+        width: 100%;
+        max-height: 15em;
 }
 
 .App .product-metrics .expenses-container .expense{
@@ -115,21 +130,19 @@ header .container{
         border: 1px solid var(--black);
         outline: none;
         width: 100%;
+        font-size: 1em;
 }
 
 .App .product-metrics .expenses-container .expense .expense-name{
         border-right: none;
 }
 
-
-
-
 .App .product-metrics .footer{
         width: 100%;
 }
 
 .App .product-metrics .footer .calculate-btn{
-        width: 90%;
+        width: 100%;
         padding: 0.3rem;
         background-color: var(--black);
         color: white;
@@ -143,16 +156,15 @@ header .container{
 }
 
 .App .product .product-result{
+        padding: 1rem;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         align-items: center;
         background-color: rgb(250, 250, 250);
-
-        width: 100%;
-        padding: 2rem;
 }
 .product-result .title{
-        font-size: 1.3em;
+        font-size: 1.4em;
         font-weight: normal;
         color: var(--black);
 }
@@ -173,7 +185,7 @@ hr{
 }
 .product-result .vat-container h3,
 .product-result .vat-container h3 span{
-        font-size: 0.8rem;
+        font-size: 1em;
         font-weight: normal;
         color: var(--black);
 }
@@ -196,3 +208,9 @@ hr{
         width: 100%;
 }
 
+
+@media (min-width : 700px){
+        .App .product{
+                grid-template-columns: 60% auto;
+        }
+}
