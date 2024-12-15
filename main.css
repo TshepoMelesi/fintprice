@@ -32,11 +32,22 @@ header{
         margin-bottom: 3em;
 }
 
+.menu ul{
+        display: flex;
+        gap: 1em;
+        list-style: none;
+}
+.menu ul li a{
+        color: var(--white);
+        text-decoration: none;
+}
+
 header .container{
         width : 90%;
-        
+        padding: 0.5em;
         display: flex;
         align-items: center;
+        justify-content: space-between;
 }
 
 header .container .logo{
@@ -206,6 +217,37 @@ hr{
         border: 2px solid var(--black);
         outline: none;
         width: 100%;
+}
+
+.blog{
+        width: 80%;
+}
+
+.blog section{
+        margin-bottom: 2em;
+}
+
+.blog .title{
+        color: red;
+        margin-bottom: 0.5em;
+}
+
+.blog .summary{
+        margin-bottom: 1em;
+        padding-left: 1em;
+}
+.blog .description, .blog .example{
+        margin-bottom: 1em;
+        padding-left: 1em;
+}
+.blog details{
+        border: 1px solid black;
+        margin-top: 0.5em;
+        padding: 0.5em 1em;
+        margin-left: 1em;
+}
+.blog details summary{
+        font-weight: bold;
 }
 
 
