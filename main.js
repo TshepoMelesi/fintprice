@@ -70,12 +70,17 @@ const handleCalculate = () => {
         writeExpenses()
         
         // refresh UI
-        priceEl.innerText = "R " + FintPrice.calculatePrice()
+        priceEl.innerText = "R " + round(FintPrice.calculatePrice())
         vatPriceEl.innerText = "R " + round(FintPrice.getVatPrice())
 }
 
 const handleMarginChange = (e) => {
         FintPrice.setMargin(e.value)
         marginSpan.innerText = round(FintPrice.getMargin() * 100)
+
+        if(FintPrice.getExpenses().length > 0){
+                handleCalculate()
+        }
 }
 
+handleCalculate()
