@@ -85,6 +85,8 @@ class FintPrice{
                         amount = 0
                 } = {}
         ){
+                if(name === "Expenses" || amount === 0) return
+                
                 this.product.expenses.push({name, comment, amount})
 
                 return this.product

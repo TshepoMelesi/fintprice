@@ -84,8 +84,8 @@ const handleMarginChange = (e) => {
 }
 
 const handlePrintOut = () => {
-        FintPrice.print()
+        if(FintPrice.getExpenses().length > 0){
+                FintPrice.print()
+        }
 }
-
-handlePrintOut()
 handleCalculate()
