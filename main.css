@@ -250,6 +250,10 @@ hr{
         font-weight: bold;
 }
 
+.output{
+        background-color: white;
+}
+
 
 @media (min-width : 700px){
         .App .product{
