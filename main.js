@@ -70,7 +70,7 @@ const handleCalculate = () => {
         writeExpenses()
         
         // refresh UI
-        priceEl.innerText = "R " + round(FintPrice.calculatePrice())
+        priceEl.innerText = "R " + round(FintPrice.calculatePrice()).toFixed(2)
         vatPriceEl.innerText = "R " + round(FintPrice.getVatPrice())
 }
 
