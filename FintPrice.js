@@ -4,6 +4,7 @@ class FintPrice{
 
         static setProduct(){
                 this.product = {
+                        image: null,
                         name : "product A",
                         description : "This is a description space for this product",
                         price : 0,
@@ -12,7 +13,20 @@ class FintPrice{
                         VATprice : 0
                 }
         }
+        static setDescription(description){
+                this.product.description = description
+        }
 
+        static getDescription(){
+                return this.product.description
+        }
+        static setImage(image){
+                this.product.image = image
+        }
+
+        static getImage(){
+                return this.product.image
+        }
         // methods for name property
         static setName(name){
                 // check if name is empty
@@ -119,7 +133,12 @@ class FintPrice{
                 const img = {x: offset.x, y: offset.y, w: 0.4 * width, h: 0.25 * height}
 
                 // draw an image
-                drawRect(context, {x: img.x, y: img.y, w: img.w, h: img.h})
+                const productImg = new Image()
+                productImg.src = this.getImage()
+                context.beginPath()
+                context.drawImage(productImg, img.x, img.y, img.w, img.h)
+                context.fill()
+                context.closePath()
 
                 // draw the name
                 text(context, {fontSize: 32 * quality, message : this.product.name, x: width * .47, y: offset.y})

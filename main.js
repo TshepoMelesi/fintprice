@@ -3,6 +3,8 @@ const marginEl = document.querySelector(".margin")
 const marginSpan = document.getElementById("margin")
 const priceEl = document.querySelector(".price")
 const vatPriceEl = document.querySelector(".vat-price")
+const nameEl = document.querySelector(".product-name")
+const descriptionEl = document.querySelector(".product-description")
 
 // initialize or setup a dummy product first
 FintPrice.setProduct()
@@ -64,11 +66,16 @@ const handleClearExpenses = () => {
         handleAddExpense()
 }
 
+const fillReport = () => {
+        FintPrice.setName(nameEl.value)
+        FintPrice.setDescription(descriptionEl.value)
+}
+
 
 const handleCalculate = () => {
         // write to FintPrice class
         writeExpenses()
-        
+        fillReport()
         // refresh UI
         priceEl.innerText = "R " + round(FintPrice.calculatePrice()).toFixed(2)
         vatPriceEl.innerText = "R " + round(FintPrice.getVatPrice()).toFixed(2)
@@ -88,4 +95,30 @@ const handlePrintOut = () => {
                 FintPrice.print()
         }
 }
+
+
+const productImg = document.querySelector(".product-image")
+const imageEl = document.querySelector(".image")
+const imgTag = document.querySelector(".image-tag")
+
+productImg.addEventListener("change", function(event){
+        const file = event.target.files[0]
+        
+        if(file){
+                const reader = new FileReader()
+
+                reader.onload = function(e){
+                        imageEl.src = e.target.result
+                        imageEl.width = 200
+                        imageEl.height = 200
+                        imageEl.style.zIdex = 50000
+                        imgTag.style.opacity = 0
+
+                        FintPrice.setImage(imageEl.src)
+                }
+
+                reader.readAsDataURL(file)
+        }
+})
+
 handleCalculate()

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
         <head>
+                <meta charset="UTF-8"/>
                 <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=0" />
                 <link rel="stylesheet" href="main.css" />
                 <title>FintSuite - Pricing App</title>
@@ -25,7 +26,49 @@
                         </div>
                         <div class="product">
                                 <div class="product-metrics">
+                                        <div class="product-details">
 
+                                                <div class="img-holder">
+                                                        <label for="product-image">
+                                                                Product image
+                                                        </label>
+                                                        <input 
+                                                                accept="image/"
+                                                                class="product-image" 
+                                                                name="product-image" 
+                                                                type="file" 
+                                                        />
+                                                        <h3 class="image-tag">Add Image</h3>
+                                                        <img 
+                                                                class="image" 
+                                                                src=""
+                                                                alt="preview of product image"
+                                                        />
+                                                </div>
+
+
+                                                <label for="product-name">
+                                                        Product name
+                                                </label>
+                                                <input 
+                                                        class="product-name" 
+                                                        placeholder="Product name" 
+                                                        name="product-name" 
+                                                        type="text"
+                                                />
+                                                
+                                                <label for="product-description">
+                                                        Product name
+                                                </label>
+                                                <input 
+                                                        class="product-description" 
+                                                        placeholder="Product description" 
+                                                        name="product-description" 
+                                                        type="text"
+                                                />
+                                                
+                                                
+                                        </div>
                                         <div class="margin-container">
                                                 <h3>Profit Margin (<span id="margin">50</span>%)</h3>
                                                 <input class="margin" oninput="handleMarginChange(this)" type="range" />
